@@ -21,7 +21,13 @@
     <section class="main-content">
       <h3>
 <a id="关于我" class="anchor" href="#%E5%85%B3%E4%BA%8E%E6%88%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>关于我</h3>
-
+　　<h2>{{ page.title }}</h2>
+　　<p>最新文章</p>
+　　<ul>
+　　　　{% for post in site.posts %}
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　{% endfor %}
+　　</ul>
 <h3>
 <a id="存档" class="anchor" href="#%E5%AD%98%E6%A1%A3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>存档</h3>
 
